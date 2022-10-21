@@ -17,7 +17,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>trang chủ</title>
+    <title>sản phẩm</title>
   </head>
   <body>
     <header>
@@ -26,16 +26,18 @@
         <span class="mo"><i class="fa-solid fa-bars"></i></span>
       </div>
       <div class="menu d-flex gap-3 fw-semibold">
-        <a href="">trang chủ</a>
-        <a href="">sản phẩm</a>
-        <a href="">tin tức</a>
-        <a href="">liên hệ</a>
-        <a href="">giới thiệu</a>
+        <a href="./index.html">trang chủ</a>
+        <a href="./productPage.html">sản phẩm</a>
+        <a href="./blog.html">tin tức</a>
+        <a href="./contact.html">liên hệ</a>
+        <a href="./intro.html">giới thiệu</a>
       </div>
 
       <div class="header__right d-flex gap-4">
         <div><i class="fa-solid fa-magnifying-glass"></i></div>
-        <div class=""><i class="fa-solid fa-cart-shopping"></i></div>
+        <a href="./cart.html" class="text-dark"
+          ><i class="fa-solid fa-cart-shopping"></i
+        ></a>
         <div><i class="fa-solid fa-user"></i></div>
       </div>
     </header>
@@ -53,7 +55,7 @@
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <h1>Áo thun Dinosaur 01</h1>
+          <h1>Giày Slipstream Men's Sneakers</h1>
           <p>price : <strong>189,000</strong></p>
 
           <p class="fs-6 fw-semibold">màu sắc</p>
@@ -87,9 +89,14 @@
               <label for=""> s</label>
             </div>
           </div>
-          <div class="quaty">
-            <h4 class="fs-6 fw-semibold">số lượng</h4>
-            <input type="number" class="form-control" min="0" max="100" />
+          <div class="soLuong d-flex mt-3">
+            <div class="tru">
+              <i class="fa-solid fa-minus"></i>
+            </div>
+            <div class="showQuatity" data-quatity="1"></div>
+            <div class="cong">
+              <i class="fa-solid fa-plus"></i>
+            </div>
           </div>
           <div class="mt-3 flex justify-content-between">
             <button class="addCart">thêm vào giỏ hàng</button>
@@ -101,7 +108,7 @@
       <div class="row">
         <div class="col-12 col-md-9 h-25">
           <h4>chi tiết sản phẩm</h4>
-          <div class="mt-2">
+          <div class="mt-2 p-5">
             Sự hiện diện của những chiếc áo thun basic cổ tròn trong tủ đồ của
             bạn chính là chìa khóa giúp cho bạn có thêm nhiều outfit thú vị mà
             lại không cần đến quá nhiều món đồ. Áo thun nữ cotton cổ tròn basic
@@ -236,6 +243,19 @@
         $(".image_s img").removeAttr("src");
 
         $(".image_s img").attr("src", $(this).attr("src"));
+      });
+
+      let qua = $(".showQuatity").data().quatity;
+      $(".showQuatity").text(qua);
+      $(".tru").click(function () {
+        qua = qua - 1 <= 0 ? 1 : qua - 1;
+        $(`.showQuatity`).text(qua);
+        $(`.showQuatity`).data("quatity", qua);
+      });
+      $(".cong").click(function () {
+        qua = qua + 1 >= 100 ? 100 : qua + 1;
+        $(`.showQuatity`).text(qua);
+        $(`.showQuatity`).data("quatity", qua);
       });
     </script>
     <script></script>
