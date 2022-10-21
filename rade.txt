@@ -1,0 +1,17 @@
+  <div class="position-relative quatity">
+              <div class="tru">
+                <i class="fa-solid fa-minus"></i>
+              </div>
+
+              <input
+                type="number"
+                class="quatity_input"
+                value="100"
+                min="0"
+                max="100"
+                step="1"
+              />
+              <div class="cong">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
