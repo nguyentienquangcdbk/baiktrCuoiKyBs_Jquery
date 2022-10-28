@@ -56,40 +56,29 @@
         </div>
         <div class="col-12 col-md-6">
           <h1>Giày Slipstream Men's Sneakers</h1>
-          <p>price : <strong>189,000</strong></p>
+          <p class="my-5">price : <strong>189,000</strong></p>
 
-          <p class="fs-6 fw-semibold">màu sắc</p>
           <div class="row">
-            <div class="col-2 color">
-              <label for="trang">
-                <input type="radio" id="trang" />
-              </label>
+            <div class="col-12 col-md-6">
+              <label for="size" class="mb-4 fs-5">Size</label>
+              <select id="size" name="size" class="form-control mb-2">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+              </select>
             </div>
-            <div class="col-2 color">
-              <label for="trang">
-                <input type="radio" id="trang" />
-              </label>
-            </div>
-            <div class="col-2 color">
-              <label for="trang">
-                <input type="radio" id="trang" />
-              </label>
+            <div class="col-12 col-md-6">
+              <label for="color" class="mb-4 fs-5">Color</label>
+              <select id="color" name="color" class="form-control mb-2">
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Red</option>
+              </select>
             </div>
           </div>
 
-          <p class="fs-6 fw-semibold">size</p>
-          <div class="row">
-            <div class="col-2 size">
-              <label for=""> m</label>
-            </div>
-            <div class="col-2 size">
-              <label for=""> l</label>
-            </div>
-            <div class="col-2 size">
-              <label for=""> s</label>
-            </div>
-          </div>
-          <div class="soLuong d-flex mt-3">
+          <div class="soLuong d-flex mt-5">
             <div class="tru">
               <i class="fa-solid fa-minus"></i>
             </div>
@@ -98,7 +87,7 @@
               <i class="fa-solid fa-plus"></i>
             </div>
           </div>
-          <div class="mt-3 flex justify-content-between">
+          <div class="mt-3 flex justify-content-between mt-5">
             <button class="addCart">thêm vào giỏ hàng</button>
             <button class="addCart">mua hàng</button>
           </div>
@@ -106,7 +95,7 @@
       </div>
 
       <div class="row">
-        <div class="col-12 col-md-9 h-25">
+        <div class="col-12 col-md-9 mt-5">
           <h4>chi tiết sản phẩm</h4>
           <div class="mt-2 p-5">
             Sự hiện diện của những chiếc áo thun basic cổ tròn trong tủ đồ của
@@ -234,10 +223,13 @@
 
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script>
+      // menu
       $(".bar").click(function (e) {
         console.log("ugu");
         $(".menu").toggleClass("active");
       });
+
+      // img product
       $(".placeHolder img").click(function () {
         console.log($(this).attr("src"));
         $(".image_s img").removeAttr("src");
@@ -245,6 +237,7 @@
         $(".image_s img").attr("src", $(this).attr("src"));
       });
 
+      // số lượng sản phẩm
       let qua = $(".showQuatity").data().quatity;
       $(".showQuatity").text(qua);
       $(".tru").click(function () {
@@ -257,7 +250,18 @@
         $(`.showQuatity`).text(qua);
         $(`.showQuatity`).data("quatity", qua);
       });
+
+      // chon màu sắc
     </script>
-    <script></script>
+    <script>
+      $(".color label").each(function (index, value) {
+        console.log(index);
+        $(this)
+          .eq(index + 1)
+          .css({
+            background: $(`.color label:eq(${index + 1})`).data().color,
+          });
+      });
+    </script>
   </body>
 </html>
