@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
-      href="./node_modules/bootstrap/dist/js/bootstrap.min.js"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
     />
     <link
       rel="stylesheet"
@@ -69,8 +69,8 @@
               </select>
             </div>
             <div class="col-12 col-md-6">
-              <label for="color" class="mb-4 fs-5">Color</label>
-              <select id="color" name="color" class="form-control mb-2">
+              <label for="color" class="mb-2 fs-5">Color</label>
+              <select id="color" name="color" class="form-control mb-4">
                 <option>Blue</option>
                 <option>Green</option>
                 <option>Red</option>
@@ -221,7 +221,7 @@
       </div>
     </footer>
 
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
       // menu
       $(".bar").click(function (e) {
@@ -253,15 +253,6 @@
 
       // chon màu sắc
     </script>
-    <script>
-      $(".color label").each(function (index, value) {
-        console.log(index);
-        $(this)
-          .eq(index + 1)
-          .css({
-            background: $(`.color label:eq(${index + 1})`).data().color,
-          });
-      });
-    </script>
+    <script></script>
   </body>
 </html>
